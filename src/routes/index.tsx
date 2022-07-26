@@ -12,8 +12,14 @@ const RoutesApp: React.FC<RoutesAppProps> = ({ toogleTheme } ) => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Dashboard toogleTheme={toogleTheme}/>}/>
-        <Route path="/repositories/:user/:repository" element={<Repository />}/>
+        <Route 
+          path="/" 
+          element={<Dashboard toogleTheme={toogleTheme}/>}
+        />
+        <Route 
+          path="/repositories/:user/:repository" 
+          element={<Repository toogleTheme={toogleTheme} />}
+        />
       </Routes>
     </BrowserRouter>
   )

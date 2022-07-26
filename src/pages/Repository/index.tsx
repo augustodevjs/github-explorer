@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { useParams, Link } from 'react-router-dom';
-import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import { useParams } from 'react-router-dom';
+import { FiChevronRight } from "react-icons/fi";
 import api from "../../services/api";
+import Header from '../../components/Header';
 
-import logoImg from '../../assets/logo.svg';
-import { Header, RepositoryInfo, Issues } from "./styles";
+import { RepositoryInfo, Issues } from "./styles";
 import { Issue, Repos } from "../../types";
 
-const Repository: React.FC = () => {
+interface RepositoryProps {
+  toogleTheme: () => void;
+}
+
+const Repository: React.FC<RepositoryProps> = ({ toogleTheme }) => {
   const { repository, user } = useParams<{ user: string, repository: string }>();
   const [repos, setRepos] = useState<Repos | null>(null);
   const [issues, setIssues] = useState<Issue[]>([]);
@@ -21,17 +25,11 @@ const Repository: React.FC = () => {
     api.get(`repos/${user}/${repository}/issues`).then((response) => {
       setIssues(response.data);
     });
-  }, [repository, user])
+  }, [repository, user]);
 
   return (
     <>
-      <Header>
-        <img src={logoImg} alt="Github Explorer" />
-        <Link to='/'>
-          <FiChevronLeft size={16}/>
-          Voltar
-        </Link>
-      </Header>
+      <Header toogleTheme={toogleTheme} show={true}/>
       <RepositoryInfo>
         {repos && (
           <header>

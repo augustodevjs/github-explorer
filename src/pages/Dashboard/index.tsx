@@ -1,21 +1,17 @@
-import React, { FormEvent, useEffect, useState, useContext } from "react";
-import Switch from "react-switch";
-import { ThemeContext } from 'styled-components';
+import React, { FormEvent, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import api from "../../services/api";
+import Header from "../../components/Header";
 
-import logoImg from '../../assets/logo.svg';
-import { FiChevronRight } from 'react-icons/fi';
 import { Form, Title, Repositories, Error } from "./styles";
 import { RepositoryProps } from "../../types";
+import { FiChevronRight } from "react-icons/fi";
 
 interface DashboardProps {
   toogleTheme: () => void;
 }
 
 const Dashboard: React.FC<DashboardProps> = ({ toogleTheme }) => {
-  const { title } = useContext(ThemeContext)
-
   const [newRepo, setNewRepo] = useState('');
   const [inputError, setInputError] = useState('');
   const [repositories, setRepositories] = useState<RepositoryProps[]>(() => {
@@ -55,18 +51,8 @@ const Dashboard: React.FC<DashboardProps> = ({ toogleTheme }) => {
 
   return (
     <>
-      <img src={logoImg} alt="Github Explorer" />
-      <Switch 
-        onChange={toogleTheme}
-        checked={title === 'dark'}
-        checkedIcon={false}
-        uncheckedIcon={false}
-        height={10}
-        width={40}
-        handleDiameter={20}
-        offColor='#fff'
-        onColor='#000'
-      />
+      <Header toogleTheme={toogleTheme} show={false}/>
+      
       <Title>Explore repositórios no Github</Title>
 
       <Form hasError={!!inputError} onSubmit={handleAddRepository}>
