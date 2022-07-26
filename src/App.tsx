@@ -1,14 +1,23 @@
 import React from 'react';
+import usePersistedTheme from './hooks/usePersistedTheme';
+import { ThemeProvider, DefaultTheme } from 'styled-components';
 
 import RoutesApp from './routes';
-import GlobalStyle from './styles/global';
+import GlobalStyle from './styles/global'; 
+import { dark, light } from './styles/themes';
 
 const App: React.FC = () => {
+  const [theme, setTheme] = usePersistedTheme<DefaultTheme>('theme', light);
+
+  const toogleTheme = () => {
+    setTheme(theme.title === 'light' ? dark : light);
+  }
+
   return (
-    <>
-      <RoutesApp />
+    <ThemeProvider theme={theme}>
+      <RoutesApp toogleTheme={toogleTheme}/>
       <GlobalStyle />
-    </>
+    </ThemeProvider>
   )
 }
 

@@ -9,11 +9,11 @@ export const Header = styled.header`
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: #a8a8b3;
+    color: ${props => props.theme.title === 'light' ? '#878797': '#a8a8b3'};
     transition: color 0.2s;
     
     &:hover {
-      color: #666;
+      color: ${props => props.theme.title === 'light' ? '#777789': '#C6C6CE'};
     }
 
     svg {
@@ -40,12 +40,12 @@ export const RepositoryInfo = styled.section`
 
       strong {
         font-size: 36px;
-        color: #3d3d4d;
+        color: ${props => props.theme.title === 'light' ? '#3D3D4D': '#FFFFFF'};
       }
 
       p {
         font-size: 18px;
-        color: #737380;
+        color: ${props => props.theme.title === 'light' ? '#737380': '#C5C5CB'};
         margin-top: 4px;
       }
     }
@@ -64,13 +64,13 @@ export const RepositoryInfo = styled.section`
       strong {
         display: block;
         font-size: 36px;
-        color: #3d3d4d;
+        color: ${props => props.theme.title === 'light' ? '#3D3D4D': '#DFDFE3'};
       }
 
       span {
         display: block;
         margin-top: 4px;
-        color: #6c6c80;
+        color: ${props => props.theme.title === 'light' ? '#6C6C80': '#AAAAAA'};
       }
     }
   }
@@ -80,7 +80,7 @@ export const Issues = styled.div`
   margin-top: 80px;
   
   a {
-    background-color: #fff;
+    background-color: ${props => props.theme.title === 'light' ? '#FFFFFF': '#454545'};
     border-radius: 5px;
     width: 100%;
     padding: 20px;
@@ -105,12 +105,13 @@ export const Issues = styled.div`
 
       strong {
         font-size: 20px;
-        color: #3d3d4d;
+        color: ${props => props.theme.title === 'light' ? '#3D3D4D': '#FFFFFF'};
+        font-weight: 500;
       }
 
       p {
         font-size: 18px;
-        color: #a8a8b3;
+        color: ${props => props.theme.title === 'light' ? '#A8A8B3': '#C5C5CB'};
         margin-top: 4px;
       }
     }

@@ -3,7 +3,7 @@ import { shade } from 'polished';
 
 export const Title = styled.h1`
   font-size: 48px;
-  color: #3a3a3a;
+  color: ${props => props.theme.title === 'light' ? '#3A3A3A': '#E8E8E8'};
   max-width: 450px;
   line-height: 56px;
 
@@ -29,8 +29,7 @@ export const Form = styled.form<FormProps>`
     color: #3a3a3a;
     outline: none;
     border: 2px solid #fff;
-    border-right: 0
-    ;
+    border-right: 0;
     ${(props) => props.hasError && css`
       border-color: #c53030;
     `};
@@ -58,10 +57,9 @@ export const Form = styled.form<FormProps>`
 
 export const Repositories = styled.div`
   margin-top: 80px;
-  /* max-width: 700px; */
   
   a {
-    background-color: #fff;
+    background-color: ${props => props.theme.title === 'light' ? '#FFFFFF': '#454545'};
     border-radius: 5px;
     width: 100%;
     padding: 20px;
@@ -92,12 +90,13 @@ export const Repositories = styled.div`
 
       strong {
         font-size: 20px;
-        color: #3d3d4d;
+        color: ${props => props.theme.title === 'light' ? '#3D3D4D': '#FFFFFF'};
+        font-weight: 500;
       }
 
       p {
         font-size: 18px;
-        color: #a8a8b3;
+        color: ${props => props.theme.title === 'light' ? '#A8A8B3': '#C5C5CB'};
         margin-top: 4px;
       }
     }
