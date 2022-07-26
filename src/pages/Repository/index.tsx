@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
+
 import { useParams } from 'react-router-dom';
-import { FiChevronRight } from "react-icons/fi";
+import { Issue, Repos } from "../../types";
+
 import api from "../../services/api";
+
 import Header from '../../components/Header';
+import { FiChevronRight } from "react-icons/fi";
 
 import { RepositoryInfo, Issues } from "./styles";
-import { Issue, Repos } from "../../types";
 
 interface RepositoryProps {
   toogleTheme: () => void;

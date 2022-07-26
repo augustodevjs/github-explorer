@@ -1,8 +1,9 @@
 import React  from 'react';
-import usePersistedTheme from './hooks/usePersistedTheme';
-import { ThemeProvider, DefaultTheme } from 'styled-components';
-
 import RoutesApp from './routes';
+
+import usePersistedTheme from './hooks/usePersistedTheme';
+
+import { ThemeProvider, DefaultTheme } from 'styled-components';
 import GlobalStyle from './styles/global'; 
 import { dark, light } from './styles/themes';
 

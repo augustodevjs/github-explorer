@@ -1,3 +1,5 @@
+import { Dispatch, SetStateAction } from "react";
+
 export interface Repos {
   full_name: string;
   description: string;
@@ -27,3 +29,8 @@ export interface RepositoryProps {
     avatar_url: string;
   };
 }
+
+export type Response<T> = [
+  T,
+  Dispatch<SetStateAction<T>>
+];

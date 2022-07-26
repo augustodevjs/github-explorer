@@ -1,13 +1,17 @@
-import React, { useContext, useState } from "react";
-import logoLight from '../../assets/logo-light.svg';
-import logoDark from '../../assets/logo-dark.svg';
-import { FiChevronLeft } from "react-icons/fi";
+import React, { useContext } from "react";
+
 import { Link } from "react-router-dom";
 import Switch from "react-switch";
+
+import { FiChevronLeft } from "react-icons/fi";
+
+import logoLight from '../../assets/logo-light.svg';
+import logoDark from '../../assets/logo-dark.svg';
+
 import { ThemeContext } from "styled-components";
 import { HeaderLogo } from "./styles";
 
-interface HeaderProps {
+export interface HeaderProps {
   toogleTheme: () => void;
   show: boolean;
 }

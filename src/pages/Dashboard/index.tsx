@@ -1,11 +1,14 @@
 import React, { FormEvent, useEffect, useState } from "react";
+
 import { Link } from "react-router-dom";
+import { RepositoryProps } from "../../types";
+
 import api from "../../services/api";
+
 import Header from "../../components/Header";
+import { FiChevronRight } from "react-icons/fi";
 
 import { Form, Title, Repositories, Error } from "./styles";
-import { RepositoryProps } from "../../types";
-import { FiChevronRight } from "react-icons/fi";
 
 interface DashboardProps {
   toogleTheme: () => void;
