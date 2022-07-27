@@ -1,10 +1,10 @@
 # :rocket: Github-Explorer
 
 <p align="left">
-   <img src="/github/photo-1.png" width="470"/>
-   <img src="/github/photo-2.png" width="470"/>
-   <img src="/github/photo-3.png" width="470"/>
-   <img src="/github/photo-4.png" width="470"/>
+   <img src="/github/photo-1.png" width="490"/>
+   <img src="/github/photo-2.png" width="490"/>
+   <img src="/github/photo-3.png" width="490"/>
+   <img src="/github/photo-4.png" width="490"/>
 </p>
 
 ## Sobre
