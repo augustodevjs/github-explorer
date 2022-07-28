@@ -14,9 +14,9 @@ Github Explorer é uma aplicação onde é possível pesquisar por um repositór
 ## Funcionalidades
 
 - Pesquisar por repositório
-- Mostrar informações esse repositório e verificar se ele realmente existe.
+- Mostrar informações do repositório e verificar se ele realmente existe.
 - Link para repositórios
-- Adicionei a feature de themeSwitcher
+- Adicionei a feature de mudança de tema (light/dark)
 
 ## Como rodar o projeto
 ```bash
