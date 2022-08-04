@@ -29,7 +29,7 @@ $ yarn
 # Rode o projeto
 $ yarn start
 
-# O servidor vai ser inicializado no <http://localhost:8080/>
+# O servidor vai ser inicializado no <http://localhost:3000/>
 ```
 
 # License
